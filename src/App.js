@@ -68,30 +68,37 @@ const App = () => {
         <Input value={currentNumber}/>
 
         <Row>
-          <Botton label={'.'} onclick={() => handleAddNumber('')}/>
+          <Botton label={'%'} onclick={() => handleAddNumber('')}/>
+          <Botton label={'CE'} onclick={() => handleAddNumber('')}/>
+          <Botton label={'C'} onclick={handleClear}/>
           <Botton label={'/'} onclick={() => handleAddNumber('')}/>
-          <Botton label={'c'} onclick={handleClear}/>
-          <Botton label={'X'} onclick={() => handleAddNumber('')}/>
         </Row>
 
         <Row>
           <Botton label={7} onclick={() => handleAddNumber('7')}/>
           <Botton label={8} onclick={() => handleAddNumber('8')}/>
           <Botton label={9} onclick={() => handleAddNumber('9')}/>
-          <Botton label={'-'} onclick={handleMinusNumbers}/>
+          <Botton label={'x'} onclick={() => handleAddNumber('')}/>
         </Row>
 
         <Row>
           <Botton label={4} onclick={() => handleAddNumber('4')}/>
           <Botton label={5} onclick={() => handleAddNumber('5')}/>
           <Botton label={6} onclick={() => handleAddNumber('6')}/>
-          <Botton label={'+'} onclick={handleSumNumbers}/>
+          <Botton label={'-'} onclick={handleMinusNumbers}/>
         </Row>
 
         <Row>
           <Botton label={1} onclick={() => handleAddNumber('1')}/>
           <Botton label={2} onclick={() => handleAddNumber('2')}/>
           <Botton label={3} onclick={() => handleAddNumber('3')}/>
+          <Botton label={'+'} onclick={handleSumNumbers}/>
+        </Row>
+
+        <Row>
+          <Botton label={'+/-'} onclick={() => handleAddNumber('')}/>
+          <Botton label={'0'} onclick={() => handleAddNumber('0')}/>
+          <Botton label={'.'} onclick={() => handleAddNumber('')}/>
           <Botton label={'='} onclick={handleEquals}/>
         </Row>
       </Content>
