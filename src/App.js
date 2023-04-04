@@ -45,6 +45,32 @@ const App = () => {
   }
  }
 
+ const handleDividerNumbers = () => {
+  if(firstNumber === '0') {
+    setFirstNumber(String(currentNumber));
+    setCurrentNumber('0');
+    setOperation('/');
+  } else {
+    const divider = Number(firstNumber) / Number(currentNumber);
+    setCurrentNumber(String(divider));
+    setFirstNumber('0');
+    setOperation('');
+  }
+ }
+
+ const handleMultiplyNumber = () => {
+  if(firstNumber === "0"){
+    setFirstNumber(String(currentNumber));
+    setCurrentNumber('0');
+    setOperation('*');
+  } else {
+    const multiply = Number(firstNumber) * Number(currentNumber);
+    setCurrentNumber(String(multiply));
+    setOperation('');
+    setFirstNumber('0');
+  }
+ }
+
  const handleEquals = () => {
   if(firstNumber !== '0' && operation !== '' && currentNumber !== '0'){
 
@@ -56,6 +82,15 @@ const App = () => {
       case '-':
         handleMinusNumbers();
         break;
+
+      case '/':
+        handleDividerNumbers();
+        break;
+
+      case '*':
+        handleMultiplyNumber();
+        break;
+
       default:
         break;
     }
@@ -71,14 +106,14 @@ const App = () => {
           <Botton label={'%'} onclick={() => handleAddNumber('')}/>
           <Botton label={'CE'} onclick={() => handleAddNumber('')}/>
           <Botton label={'C'} onclick={handleClear}/>
-          <Botton label={'/'} onclick={() => handleAddNumber('')}/>
+          <Botton label={'/'} onclick={handleDividerNumbers}/>
         </Row>
 
         <Row>
           <Botton label={7} onclick={() => handleAddNumber('7')}/>
           <Botton label={8} onclick={() => handleAddNumber('8')}/>
           <Botton label={9} onclick={() => handleAddNumber('9')}/>
-          <Botton label={'x'} onclick={() => handleAddNumber('')}/>
+          <Botton label={'x'} onclick={handleMultiplyNumber}/>
         </Row>
 
         <Row>
